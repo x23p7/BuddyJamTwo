@@ -408,6 +408,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1604868460}
+  - {fileID: 546145863}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -604,6 +605,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &546145862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 546145863}
+  - component: {fileID: 546145864}
+  m_Layer: 0
+  m_Name: CameraController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &546145863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546145862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 310471001}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &546145864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546145862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee3fa37cfcade74bb82b5b2f09703f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCam: {fileID: 0}
+  bottomLimit: 15
+  leftLimit: 35
+  topLimit: 45
+  rightLimit: 35
+  target: {fileID: 1533103424}
+  followLerpSpeed: 0.5
 --- !u!1 &560801774
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,6 +1003,7 @@ GameObject:
   - component: {fileID: 1533103428}
   - component: {fileID: 1533103427}
   - component: {fileID: 1533103426}
+  - component: {fileID: 1533103431}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -988,8 +1040,6 @@ MonoBehaviour:
   jumpForce: 1000
   runForce: 5000
   maxVelocity: 5
-  hookshotRange: 8
-  hook: {fileID: 1287105339}
 --- !u!114 &1533103427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1107,6 +1157,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1533103431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533103424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2352d91ef7f5b1142af58c282c481b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canJump: 1
+  canDoubleJump: 0
+  canDash: 1
+  dashForce: 1000
+  canShrink: 0
+  canGrappleHook: 1
+  canAttack: 0
+  hookshotRange: 8
+  hook: {fileID: 1287105339}
 --- !u!1 &1604868459
 GameObject:
   m_ObjectHideFlags: 0
